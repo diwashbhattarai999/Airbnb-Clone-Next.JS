@@ -2,13 +2,31 @@
 
 import { AiOutlineMenu } from "react-icons/ai";
 import Avatar from "../Avatar";
-import { useCallback, useState } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 import MenuItem from "./MenuItem";
 import useRegisterModal from "@/app/hooks/useRegisterModal";
 
 const UserMenu = () => {
   const registerModal = useRegisterModal();
   const [isOpen, setIsOpen] = useState(false);
+  const menuRef = useRef();
+
+  /* ==================== Click Outside Close ==================== */
+  useEffect(() => {
+    const handleClickOutside = (e) => {
+      if (menuRef.current && !menuRef.current.contains(e.target)) {
+        setIsOpen(false);
+      }
+    };
+
+    document.addEventListener("mousedown", handleClickOutside);
+
+    // Clean up
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, [isOpen]);
+  /* ==================== Click Outside Close End ==================== */
 
   const toggleOpen = useCallback(() => {
     setIsOpen((prevIsOpen) => !prevIsOpen);
@@ -34,12 +52,15 @@ const UserMenu = () => {
         </div>
       </div>
       {isOpen && (
-        <div className="absolute rounded-xl shadow-md w-[40vw] md:w-3/4 bg-white overflow-hidden right-0 top-14 border-[1px] text-sm">
+        <div
+          ref={menuRef}
+          className="absolute rounded-xl shadow-md w-[40vw] md:w-3/4 bg-white overflow-hidden right-0 top-14 border-[1px] text-sm"
+        >
           <div className="flex flex-col cursor-pointer">
             <>
-              <MenuItem onClick={() => {}} label="Log in" />
+              <MenuItem onClick={registerModal.onOpen} label="Log in" />
               <MenuItem onClick={registerModal.onOpen} label="Sign up" />
-              <span className="h-[1px] bg-neutral-200 m-2" />
+              <hr />
               <MenuItem onClick={() => {}} label="Airbnb your home" />
               <MenuItem onClick={() => {}} label="Help" />
             </>
