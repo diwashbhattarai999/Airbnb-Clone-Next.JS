@@ -11,6 +11,7 @@ import Heading from "../Heading";
 import Input from "../Input";
 import { toast } from "react-hot-toast";
 import Button from "../Button";
+import { signIn } from "next-auth/react";
 
 const RegisterModal = () => {
   const registerModal = useRegisterModal();
@@ -42,6 +43,16 @@ const RegisterModal = () => {
       })
       .finally(() => setIsLoading(false));
   };
+
+  //Google Handler Function
+  async function handleGoogleSignIn() {
+    signIn("google", { callbackUrl: "http://localhost:3000" });
+  }
+
+  //GitHub Handler Function
+  async function handleGithubSignIn() {
+    signIn("github", { callbackUrl: "http://localhost:3000" });
+  }
 
   const bodyContent = (
     <div className="flex flex-col gap-4">
@@ -81,13 +92,13 @@ const RegisterModal = () => {
         outline
         label="Continue with Google"
         icon={FcGoogle}
-        onClick={() => {}}
+        onClick={handleGoogleSignIn}
       />
       <Button
         outline
         label="Continue with GitHub"
         icon={AiFillGithub}
-        onClick={() => {}}
+        onClick={handleGithubSignIn}
       />
       <div
         className="

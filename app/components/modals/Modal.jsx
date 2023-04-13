@@ -101,7 +101,11 @@ const Modal = ({
                 >
                   <IoMdClose size={18} />
                 </button>
-                <div className="text-lg font-semibold">{title}</div>
+                <div className="flex flex-col justify-center items-center">
+                  <div className="text-lg font-semibold">{title}</div>
+                  {/* <div className="text-red-600 font-bold">!!Form Under Maintainance!!</div>
+                  <div className="text-lg font-normal text-red-600">You can use Google or GitHub login</div> */}
+                </div>
               </div>
               {/* BODY */}
               <div className="relative p-6 flex-auto">{body}</div>
