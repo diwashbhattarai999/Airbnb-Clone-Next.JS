@@ -6,6 +6,7 @@ import { useCallback, useEffect, useRef, useState } from "react";
 import MenuItem from "./MenuItem";
 import useRegisterModal from "@/app/hooks/useRegisterModal";
 import useLoginModal from "@/app/hooks/useLoginModal";
+import { VscGlobe } from "react-icons/vsc";
 
 const UserMenu = () => {
   const registerModal = useRegisterModal();
@@ -37,12 +38,18 @@ const UserMenu = () => {
 
   return (
     <div className="relative">
-      <div className="flex flex-row items-center gap-3">
+      <div className="flex flex-row items-center">
         <div
           onClick={() => {}}
           className="hidden md:block text-sm font-semibold py-3 px-4 rounded-full hover:bg-neutral-100 transition cursor-pointer"
         >
           Airbnb your home
+        </div>
+        <div
+          onClick={() => {}}
+          className="hidden md:block p-3 mr-2 rounded-full hover:bg-neutral-100 transition cursor-pointer"
+        >
+          <VscGlobe size={20} />
         </div>
         <div
           onClick={toggleOpen}

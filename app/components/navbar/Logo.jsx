@@ -9,6 +9,7 @@ const Logo = () => {
   return (
     <>
       <Image
+        onClick={() => router.push("/")}
         alt="logo"
         className="hidden lg:block cursor-pointer"
         height="100"
@@ -16,6 +17,7 @@ const Logo = () => {
         src="/assets/logo.png"
       />
       <Image
+        onClick={() => router.push("/")}
         alt="logo"
         className="lg:hidden cursor-pointer"
         height="100"
