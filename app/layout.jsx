@@ -4,6 +4,7 @@ import "./globals.css";
 import { Nunito } from "next/font/google";
 import ToasterProvider from "./providers/ToasterProvider";
 import { SessionProvider } from "next-auth/react";
+import LoginModal from "./components/modals/LoginModal";
 
 export const metadata = {
   title: "Airbnb | Airbnb clone ",
@@ -22,10 +23,11 @@ export default function RootLayout({ children, session }) {
     <html lang="en">
       <body className={font.className}>
         {/* <SessionProvider session={session}> */}
-          <ToasterProvider />
-          <RegisterModal />
-          <Navbar />
-          {children}
+        <ToasterProvider />
+        <LoginModal />
+        <RegisterModal />
+        <Navbar />
+        {children}
         {/* </SessionProvider> */}
       </body>
     </html>
