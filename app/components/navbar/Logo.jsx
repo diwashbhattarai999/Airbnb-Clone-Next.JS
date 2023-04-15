@@ -21,7 +21,7 @@ const Logo = () => {
         alt="logo"
         className="lg:hidden cursor-pointer"
         height="100"
-        width="34"
+        width="33"
         src="/assets/mobile-logo.png"
       />
     </>

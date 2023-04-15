@@ -11,7 +11,7 @@ const Navbar = () => {
     <nav className="fixed w-full bg-white z-10 shadow-sm">
       <div className="py-4 border-b-[1px]">
         <Container className="flex">
-          <div className="flex flex-row justify-between items-center gap-2 md:gap-0">
+          <div className="flex flex-row justify-between items-center gap-1 md:gap-0">
             <Logo />
             <Search />
             <UserMenu />

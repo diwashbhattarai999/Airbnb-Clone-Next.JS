@@ -7,3 +7,9 @@ body,
 :root {
   height: 100%;
 }
+
+/* Hide scrollbar */
+.categories::-webkit-scrollbar {
+  width: 0px;
+  background: transparent;
+}
