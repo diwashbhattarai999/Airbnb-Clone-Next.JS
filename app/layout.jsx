@@ -5,6 +5,7 @@ import Navbar from "./components/navbar/Navbar";
 import "./globals.css";
 import { Nunito } from "next/font/google";
 import ToasterProvider from "./providers/ToasterProvider";
+import Footer from "./components/footer/Footer";
 
 export const metadata = {
   title: "Airbnb | Airbnb clone ",
@@ -28,6 +29,7 @@ export default function RootLayout({ children }) {
         <RegisterModal />
         <Navbar />
         <div className="pb-20 pt-28">{children}</div>
+        <Footer />
       </body>
     </html>
   );

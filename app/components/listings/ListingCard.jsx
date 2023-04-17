@@ -65,10 +65,13 @@ const ListingCard = ({
             src={data.imageSrc}
             fill
             placeholder="blur"
-            blurDataURL={data.imageSrc}
+            blurDataURL="/assets/blur.png"
             className="object-center h-full w-full group-hover:scale-110 transition"
           />
-          <div className="absolute top-3 right-3">
+          <div
+            onClick={(e) => e.stopPropagation()}
+            className="absolute top-3 right-3"
+          >
             <HeartButton listingId={data.id} />
           </div>
         </div>

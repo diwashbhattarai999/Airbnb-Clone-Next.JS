@@ -1,10 +1,32 @@
 "use client";
 
+import { useEffect, useState } from "react";
 import { AiFillHeart, AiOutlineHeart } from "react-icons/ai";
 
 const HeartButton = ({ listingId }) => {
-  const hasFavorited = false;
-  const toggleFavorite = () => {};
+  const [hasFavorited, setHasFavorited] = useState(false);
+
+  const toggleFavorite = () => {
+    setHasFavorited(!hasFavorited);
+  };
+
+  useEffect(() => {
+    const favorites = JSON.parse(sessionStorage.getItem("favorites")) || {};
+    if (favorites[listingId]) {
+      setHasFavorited(true);
+    }
+  }, [listingId]);
+
+  useEffect(() => {
+    const favorites = JSON.parse(sessionStorage.getItem("favorites")) || {};
+    if (hasFavorited) {
+      favorites[listingId] = true;
+    } else {
+      delete favorites[listingId];
+    }
+    sessionStorage.setItem("favorites", JSON.stringify(favorites));
+  }, [listingId, hasFavorited]);
+
   return (
     <div
       onClick={toggleFavorite}
