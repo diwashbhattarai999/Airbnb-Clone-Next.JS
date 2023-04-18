@@ -17,19 +17,19 @@ export default function Footer() {
         </div>
         <div className="flex items-center justify-center flex-col md:flex-row py-4 gap-4">
           <p className="flex items-center justify-center gap-2">
-            <span className="flex items-center gap-1">
-              <VscGlobe className="" />
+            <span className="flex items-center gap-1 text-lg cursor-pointer hover:opacity-80">
+              <VscGlobe />
               English
             </span>
-            <span className="flex items-center gap-1">
-              <CgDollar className="" />
+            <span className="flex items-center gap-1 text-lg cursor-pointer hover:opacity-80">
+              <CgDollar />
               USD
             </span>
-            <FiFacebook />
-            <FiTwitter />
-            <FiInstagram />
+            <FiFacebook className="text-lg cursor-pointer hover:opacity-80" />
+            <FiTwitter className="text-lg cursor-pointer hover:opacity-80" />
+            <FiInstagram className="text-lg cursor-pointer hover:opacity-80" />
           </p>
-          <p>
+          <p className="text-lg">
             &copy; 2021{" "}
             <a
               className="font-bold tracking-[-.25rem]"

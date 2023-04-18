@@ -24,18 +24,18 @@ const Catagories = () => {
     const container = categoriesRef.current;
 
     const handleScroll = () => {
-      setHideLeftArrow(!(container.scrollLeft > 0));
+      setHideLeftArrow(!(container?.scrollLeft > 0));
       setHideRightArrow(
-        !(container.scrollLeft < container.scrollWidth - container.clientWidth)
+        !(container?.scrollLeft < container?.scrollWidth - container?.clientWidth)
       );
     };
 
-    container.addEventListener("scroll", handleScroll);
+    container?.addEventListener("scroll", handleScroll);
     window.addEventListener("resize", handleScroll);
     handleScroll();
 
     return () => {
-      container.removeEventListener("scroll", handleScroll);
+      container?.removeEventListener("scroll", handleScroll);
       window.removeEventListener("resize", handleScroll);
     };
   }, []);

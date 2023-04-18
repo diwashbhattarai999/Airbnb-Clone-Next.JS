@@ -15,6 +15,19 @@ const HeartButton = ({ listingId }) => {
     if (favorites[listingId]) {
       setHasFavorited(true);
     }
+
+    const handleStorageChange = (event) => {
+      if (event.key === "favorites") {
+        const newFavorites = JSON.parse(event.newValue) || {};
+        setHasFavorited(newFavorites[listingId] || false);
+      }
+    };
+
+    window.addEventListener("storage", handleStorageChange);
+
+    return () => {
+      window.removeEventListener("storage", handleStorageChange);
+    };
   }, [listingId]);
 
   useEffect(() => {
