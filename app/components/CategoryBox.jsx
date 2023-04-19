@@ -19,7 +19,6 @@ const CategoryBox = ({ icon: Icon, label, selected }) => {
       ...currentQuery,
       category: label,
     };
-    console.log(updatedQuery)
 
     if (params?.get("category") === label) {
       delete updatedQuery.category;

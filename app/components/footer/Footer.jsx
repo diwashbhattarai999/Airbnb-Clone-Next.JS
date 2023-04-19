@@ -7,7 +7,7 @@ import FooterSection from "./FooterSection";
 
 export default function Footer() {
   return (
-    <footer className="bg-zinc-50 py-4">
+    <footer className="bg-zinc-50 py-4 border-t-[1px]">
       <Container>
         <div className="lg:flex justify-between">
           <FooterSection title="About" data={aboutData} />
