@@ -7,7 +7,7 @@ export default function Hosting() {
   return (
     <Container>
       <div
-        className="relative p-16 md:p-24 bg-top flex flex-col items-start rounded-xl text-white"
+        className="relative p-16 mb-12 md:p-24 bg-top flex flex-col items-start rounded-xl text-white"
         style={{
           background: "url('/assets/hosting.jpg')",
           backgroundSize: "cover",

@@ -40,6 +40,7 @@
   },
   "devDependencies": {
     "@types/bcrypt": "^5.0.0",
+    "@types/next": "^9.0.0",
     "mongoose": "^7.0.3",
     "prisma": "^4.12.0"
   }

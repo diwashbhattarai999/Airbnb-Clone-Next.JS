@@ -1,4 +1,6 @@
 export default function getListings() {
+ 
+
   return [
     {
       id: 1,
