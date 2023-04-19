@@ -3,8 +3,8 @@ import EmptyContainer from "./components/EmptyContainer";
 import getListings from "./actions/getListings";
 import ListingCard from "./components/listings/ListingCard";
 
-export default function Home() {
-  const listings = getListings();
+export default async function Home({ searchParams }) {
+  const listings = await getListings(searchParams);
 
   if (listings.length === 0) {
     return (

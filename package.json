@@ -33,6 +33,7 @@
     "react-leaflet": "^4.2.1",
     "react-redux": "^8.0.5",
     "react-select": "^5.7.2",
+    "react-spinners": "^0.13.8",
     "redux": "^4.2.1",
     "tailwindcss": "3.3.1",
     "world-countries": "^4.0.0",

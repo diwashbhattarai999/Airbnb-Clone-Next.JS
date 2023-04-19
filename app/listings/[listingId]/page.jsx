@@ -1,14 +1,13 @@
-import getListings from "@/app/actions/getListings";
+import { listingsData } from "@/app/components/listingsData";
 import EmptyContainer from "@/app/components/EmptyContainer";
 import ListingClient from "./ListingClient";
 
 const ListingPage = ({ params }) => {
   const { listingId } = params;
 
-  const listings = getListings();
-  const listing = listings[listingId - 1];
+  const listing = listingsData[listingId - 1];
 
-  if (!listings) {
+  if (!listingsData) {
     return <EmptyContainer />;
   }
 
